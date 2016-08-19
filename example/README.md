@@ -13,7 +13,6 @@ Name your project in the `.env` file so that docker creates images with that pre
 edit .env
 ```
 
-
 Start docker
 ```
 docker-compose up -d
