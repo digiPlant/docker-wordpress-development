@@ -10,8 +10,8 @@ docker build composer-wordpress -t digiplant/wordpress-development-composer
 docker build composer-nginx -t digiplant/wordpress-development-composer-nginx
 
 # Push to hub
-docker push digiplant/wordpress-development
-docker push digiplant/wordpress-development-nginx
+docker push digiplant/wordpress-development:latest
+docker push digiplant/wordpress-development-nginx:latest
 
-docker push digiplant/wordpress-development-composer
-docker push digiplant/wordpress-development-composer-nginx
+docker push digiplant/wordpress-development-composer:latest
+docker push digiplant/wordpress-development-composer-nginx:latest

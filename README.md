@@ -1,22 +1,20 @@
 # Docker Wordpress Development
 
-[![](https://imagelayers.io/badge/digiplant/wordpress-development:latest.svg)](https://imagelayers.io/?images=digiplant/wordpress-development:latest 'Get your own badge on imagelayers.io')
-
 This image is a good starting point for developing wordpress themes and plugins.
 It shows php's errors so that you can find bugs and it has XDebug so that you can debug your code via webstorm / intellij.
+There are two versions, either you want to use composer as a base for your development, or you want a vanilla wordpress.
 
 > **NOTE** This is not intended to be used in production. It is intended to be used as a dev setup for those creating themes / plugins.
 
 ## PHP 7
-The official WordPress image doesn't run on PHP-7, but this one does.
-PHP has show all errors enables
+Both the vanilla and composer versions are running on php 7
+PHP has show all errors enables for simpler debugging
 
 ## XDebug
 Xdebug 2.4 is installed and configured to listen to port `9999` and the IDEKey `docker`
 
 
 # Usage
-There are two versions, either you want to use composer as a base for your development, or you want a vanilla wordpress.
 
 ## Vanilla Wordpress
 Uses wordpress own base image, but adds xdebug and debugging variables
