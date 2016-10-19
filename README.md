@@ -7,9 +7,6 @@ It shows php's errors so that you can find bugs and it has XDebug so that you ca
 
 > **NOTE** This is not intended to be used in production. It is intended to be used as a dev setup for those creating themes / plugins.
 
-## WordPress
-This image is a fork of WordPress official image.
-
 ## PHP 7
 The official WordPress image doesn't run on PHP-7, but this one does.
 PHP has show all errors enables
@@ -17,10 +14,20 @@ PHP has show all errors enables
 ## XDebug
 Xdebug 2.4 is installed and configured to listen to port `9999` and the IDEKey `docker`
 
-# How to use
-Check the example folder
 
-## Access MariaDB (MySql)
+# Usage
+There are two versions, either you want to use composer as a base for your development, or you want a vanilla wordpress.
+
+## Vanilla Wordpress
+Uses wordpress own base image, but adds xdebug and debugging variables
+Check the [Example](example) directory for usage instructions
+
+## Composer Wordpress
+Uses composer as a base for development, which installs wordpress via composer into /wp
+It has a couple of workarounds to get it working with nginx.
+Check the [Composer Example](composer-example) directory for usage instructions
+
+# Access MariaDB (MySql)
 To access mysql you use a database program such as Navicat or Sequel Pro.
 ```
 host: localhost
@@ -31,15 +38,10 @@ password: 42
 you can now use Navicats data transfer functionality to copy a existing db into docker.
 
 # Development
-Development specific commands and info
+to update to latest versions of wordpress and nginx run update script
 
 ```
-docker build wordpress -t digiplant/wordpress-development
-docker build nginx -t digiplant/wordpress-nginx-development
-
-
-docker push digiplant/wordpress-development
-docker push digiplant/wordpress-nginx-development
+./update.sh
 
 ```
 

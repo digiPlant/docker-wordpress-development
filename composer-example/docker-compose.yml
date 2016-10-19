@@ -17,19 +17,18 @@ services:
       MYSQL_ROOT_PASSWORD: 42
 
   wordpress:
-    image: digiplant/wordpress-development
+    image: digiplant/wordpress-development-composer
     ports:
       - "9000:9000"
     links:
       - mysql
     volumes:
-      - wordpress-data:/var/www/html/wp-content
-      - .:/var/www/html/wp-content/themes/mytheme
+      - ./:/var/www/html/
     environment:
       WORDPRESS_DB_PASSWORD: 42
 
   nginx:
-    image: digiplant/wordpress-development-nginx
+    image: digiplant/wordpress-development-composer-nginx
     ports:
       - "80:80"
       - "443:443"
