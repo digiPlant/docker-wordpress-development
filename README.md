@@ -25,6 +25,11 @@ Uses composer as a base for development, which installs wordpress via composer i
 It has a couple of workarounds to get it working with nginx.
 Check the [Composer Example](composer-example) directory for usage instructions
 
+# Backend Proxying
+If you need to override a certain url and proxy to another backend you can include your own nginx conf which will be included along side the
+wordpress nginx config
+Check [include file](example/docker-nginx.conf) and [mapping](example/docker-compose.yml#L41) for how this is accomplished
+
 # Access MariaDB (MySql)
 To access mysql you use a database program such as Navicat or Sequel Pro.
 ```
