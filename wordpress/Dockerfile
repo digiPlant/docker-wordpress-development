@@ -1,4 +1,4 @@
-FROM wordpress:php7.0-fpm
+FROM wordpress:4.7-php7.0-fpm
 
 # Set timezone
 RUN echo "Europe/Stockholm" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
@@ -7,8 +7,8 @@ RUN echo "Europe/Stockholm" > /etc/timezone && dpkg-reconfigure -f noninteractiv
 RUN apt-get update && apt-get install -y unzip
 
 # Install X-Debug for php 7
-ENV XDEBUG_VERSION 2.4.1
-ENV XDEBUG_SHA1 52b5cede5dcb815de469d671bfdc626aec8adee3
+ENV XDEBUG_VERSION 2.5.0
+ENV XDEBUG_SHA1 0d31602a6ee2ba6d2e18a6db79bdb9a2a706bcd9
 
 RUN set -x \
 	&& curl -SL "http://www.xdebug.org/files/xdebug-$XDEBUG_VERSION.tgz" -o xdebug.tgz \
