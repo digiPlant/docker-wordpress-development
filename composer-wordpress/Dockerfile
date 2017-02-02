@@ -23,6 +23,17 @@ RUN set -x \
 	&& make install \
 	&& make clean
 
+# Install extra php extensions
+RUN apt-get update && \
+	apt-get install -y libcurl4-gnutls-dev && docker-php-ext-configure curl && docker-php-ext-install curl && \
+	apt-get install -y zlib1g-dev libicu-dev g++ && docker-php-ext-configure intl && docker-php-ext-install intl && \
+	apt-get install -y libxml++2.6-dev && docker-php-ext-install xml && \
+	apt-get install -y libmcrypt-dev && docker-php-ext-install mcrypt && \
+	docker-php-ext-install json && \
+	docker-php-ext-install mbstring && \
+	docker-php-ext-install soap && \
+	docker-php-ext-install zip
+
 # Install php wordpress required extensions
 
 # install the PHP extensions we need
